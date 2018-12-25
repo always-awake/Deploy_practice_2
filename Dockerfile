@@ -32,8 +32,8 @@ RUN     pip3 install -r /tmp/requirements.txt
 # 소스코드를 복사
 COPY    .   /srv/project/
 #
-#RUN         cp -f   /srv/project/.config/app.conf \
-#                    /etc/nginx/sites-enabled/ && \
-#            rm      /etc/nginx/sites-enabled/default
+RUN         cp -f   /srv/project/.config/app.conf \
+                    /etc/nginx/sites-enabled/ && \
+            rm      /etc/nginx/sites-enabled/default
 
 CMD     /bin/bash
