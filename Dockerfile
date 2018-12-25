@@ -25,6 +25,15 @@ COPY    ./requirements.txt  /tmp/requirements.txt
 # 여기까지 작성하고 docker run 하여 tmp안에 requirements.txt가 잘 copy되었는 지 확인 ~
 
 # /tmp/requirements.txt에 기록된 내용을 이미지에 설치
-RUN         pip3 install -r /tmp/requirements.txt
+# 웹 애플리케이션 프레임워크 Django 설치
+RUN     pip3 install -r /tmp/requirements.txt
 # pip3을 이용해서 requirements.txt에 있는 python 모듈을 한번에 모두 설치해준다.
 
+# 소스코드를 복사
+COPY    .   /srv/project/
+#
+#RUN         cp -f   /srv/project/.config/app.conf \
+#                    /etc/nginx/sites-enabled/ && \
+#            rm      /etc/nginx/sites-enabled/default
+
+CMD     /bin/bash
