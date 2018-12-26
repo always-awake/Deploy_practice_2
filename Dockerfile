@@ -36,4 +36,4 @@ RUN         cp -f   /srv/project/.config/app.conf \
                     /etc/nginx/sites-enabled/ && \
             rm      /etc/nginx/sites-enabled/default
 
-CMD     /bin/bash
+CMD         nginx && uwsgi --ini /srv/project/.config/uwsgi.ini
