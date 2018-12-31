@@ -33,7 +33,7 @@ RUN     pip3 install -r /tmp/requirements.txt
 COPY    .   /srv/project/
 #
 RUN         cp -f   /srv/project/.config/app.conf \
-                    /etc/nginx/sites-enabled/ && \
+                    /etc/nginx/sites-enabled/ &&\
             rm      /etc/nginx/sites-enabled/default
 
 CMD         nginx && uwsgi --ini /srv/project/.config/uwsgi.ini
